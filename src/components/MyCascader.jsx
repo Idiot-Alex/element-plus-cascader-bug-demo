@@ -284,20 +284,30 @@ const MyCascader = defineComponent({
       console.log(val)
     }
 
-    return () => (
-      <>
-        <p>使用 jsx </p>
-        <ElCascader
-            v-model={item.value} 
-            options={options}
-            props={cascaderProps}
-            collapse-tags-tooltip 
-            filterable
-            clearable
-            onChange={change}
-            ></ElCascader>
-      </>
-    )
+    return () => {
+      const cascaderProps1 = {
+        expandTrigger: 'hover',
+        emitPath: false,
+        multiple: true,
+        checkStrictly: true
+      }
+      // 使用 cascaderProps1 无法在搜索关键词情况下选择元素
+      // 使用 cascaderProps 在搜索关键词情况下选择元素正常
+      return (
+        <>
+          <p>使用 jsx </p>
+          <ElCascader
+              v-model={item.value} 
+              options={options}
+              props={cascaderProps1}
+              collapse-tags-tooltip
+              filterable
+              clearable
+              onChange={change}
+              ></ElCascader>
+        </>
+      )
+    }
   }
 })
 
