@@ -1,6 +1,8 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import {MyCascader} from './components/MyCascader.jsx'
+import Cascader from './components/Cascader.vue'
+
 </script>
 
 <template>
@@ -13,7 +15,9 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
-    <TheWelcome />
+    <MyCascader />
+    <br/>
+    <Cascader />
   </main>
 </template>
 
